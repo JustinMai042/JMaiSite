@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mai Website",
+    "section": "",
+    "text": "Hello! My name is Justin Mai and I am currently attending California Polytechnic State University San Luis Obispo, I am majoring in statistics and want to pursue the data science track. Welcome to my website here you can find some of my projects and my contact information.\nSince there is some space left. Here are a few fun facts about me:\n\nI love snowboarding during the winter months, carving down the slopes and enjoying the fresh mountain air.\nClimbing is another passion of mine. I mostly indoor boulder over the summer.\nVideo games are a big part of my downtime, I enjoy playing them to pass time or playing them to avoid assigments.\nMy first and only snowboard was bought from a man behing a walmart for 100 dollars\n\nMy GitHub  My LinkedIn  My Resume"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Contact",
+    "section": "",
+    "text": "If you have any questions, feel free to Email me or Call me."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Here are some of my projects that have been done within the last year! Additional projects such as ones done in Python and SAS can be found on my gitHub repository.\nCensus Data Shiny App:\n\n\n(To create a GIF just check the box and click Generate Visualization again)\nDatafest Presentation:"
+  }
+]
