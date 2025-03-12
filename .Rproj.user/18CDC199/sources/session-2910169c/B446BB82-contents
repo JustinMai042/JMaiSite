@@ -1,0 +1,25 @@
+---
+title: "Projects"
+---
+
+Here are some of my projects that have been done within the last year! Additional projects such as ones done in Python and SAS can be found on my gitHub repository.
+
+Census Data Shiny App:
+
+<iframe src="https://justinmai042.shinyapps.io/census_gif_final/" width="100%" height="600px">
+
+</iframe>
+
+(To create a GIF just check the box and click Generate Visualization again)
+
+Datafest Presentation:
+
+<iframe src="datafestslides.pdf" frameborder="0" width="100%" height="600px">
+
+</iframe>
+
+Using Multilevel Modeling to Investigate Butterfly Habitats
+
+<iframe src="final_reportsl.pdf" frameborder="0" width="100%" height="600px">
+
+</iframe>

@@ -1,0 +1,52 @@
+
+
+```{r}
+library(tidyverse)
+
+# Assuming your dataset is stored in a dataframe called df
+
+# Separate 'variable' column into two new columns based on the presence of 'Income'
+combined_data_2 <- combined_data %>%
+  mutate(Income = ifelse(str_detect(variable, "Income"), estimate, NA),
+         Race = ifelse(!str_detect(variable, "Income"), str_remove(variable, "_Income"), NA),
+         Population = ifelse(!str_detect(variable, "Income"), estimate, NA)) %>%
+  
+  select(-estimate, -moe)
+
+# Display the modified dataframe
+print(combined_data_2)
+
+```
+
+
+
+```{r}
+library(tidyverse)
+library(stringr)
+library(lubridate)
+
+
+# First dataset: Keep rows with non-NA Income, rename 'variable' to 'Race_Income', and remove 'Race' and 'Population' columns
+Income <- combined_data_2 %>%
+  filter(!is.na(Income)) %>%
+    mutate(variable = str_replace(variable, "_Income", "")) %>%
+  rename(Race_Income = variable) %>%
+  arrange(NAME, year, Race_Income) %>%
+  mutate(year = year(as.Date(paste0(year, "-01-01")))) %>%
+  select(-Race, -Population)
+
+# Second dataset: Keep rows with non-NA Population, remove '_Income' from 'variable', and remove 'variable' and 'Income' columns
+Population <- combined_data_2 %>%
+  mutate(variable = str_replace(variable, "_Income", "")) %>%
+  filter(!is.na(Population)) %>%
+  arrange(NAME, year, Race) %>%
+  mutate(year = year(as.Date(paste0(year, "-01-01")))) %>%
+  select(-variable, -Income)
+
+```
+
+```{r}
+# Read the CSV file
+combined_data <- read.csv("combined_data.csv")
+
+```

@@ -1,0 +1,15 @@
+{
+  "hash": "b831a692e8386c76ec619f9c622b1548",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# ---\n# title: \"HELLO\"\n# editor_options: \n#   chunk_output_type: console\n# ---\n\n---\ntitle: \"Mai Website\"\n---\n\n\n<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    .ascii-title {\n      font-family: monospace;\n      font-size: 24px;\n      white-space: pre;\n      text-align: center;\n    }\n  </style>\n</head>\n<body>\n\n<div class=\"ascii-title\">\n  _____       _ _           \n |  __ \\     (_) |          \n | |__) |_ __ _| | ___  ___ \n |  ___/| '__| | |/ _ \\/ __|\n | |    | | | (_| |  __/\\__ \\\n |_|    |_|  \\__,_|\\___||___/\n</div>\n\n</body>\n</html>\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n909090*898\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 816362820\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

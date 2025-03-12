@@ -1,0 +1,180 @@
+  library(shiny) #GIF APp
+  library(tidyverse)
+  library(shinyWidgets)
+  library(av)
+  library(gganimate)
+  library(gifski)
+  library(shinythemes)
+  library(base64enc)
+  
+  # UI definition
+  ui <- fluidPage(theme = shinytheme("sandstone"),
+    # titlePanel("Population and Income Growth Visualization"),
+    tags$head(
+      tags$style(
+        HTML("
+        .header {
+          font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+          text-align: center;
+          font-weight: bold;
+    
+            background-color: #faf5eb;
+           
+          padding: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #dee2e6;
+        }
+        body {
+            background-color: #808080; 
+          }
+        ")
+      )
+    ),
+    tags$div(class = "header", 
+             tags$h1("Population and Income Growth Visualization")
+    ),
+    sidebarLayout(
+      sidebarPanel(
+        radioButtons("dataset_type", "Select Dataset Type",
+                     choices = c("Income", "Population"), selected = "Income"),
+        conditionalPanel(
+          condition = "input.dataset_type == 'Income'",
+          pickerInput("county_income", "Select County", choices = unique(Income$NAME), multiple = FALSE, options = list(`actions-box` = TRUE)),
+          pickerInput("race_income", "Select Race", choices = unique(Income$Race_Income), selected = "Asian",multiple = TRUE, options = list(`actions-box` = TRUE))
+        ),
+        conditionalPanel(
+          condition = "input.dataset_type == 'Population'",
+          pickerInput("county_population", "Select County", choices = unique(Population$NAME), multiple = FALSE, options = list(`actions-box` = TRUE)),
+          pickerInput("race_population", "Select Race", choices = unique(Population$Race), selected = "Asian", multiple = TRUE, options = list(`actions-box` = TRUE))
+        ),
+        sliderInput("years", "Select Range of Years",
+                    min = min(Income$year, Population$year), max = max(Income$year, Population$year), value = c(min(Income$year, Population$year), max(Income$year, Population$year)),
+                    step = 1, sep = ""),
+        actionButton("goButton", "Generate Visualization"),
+        
+        checkboxInput("create_gif", "Create GIF", FALSE)
+      ),
+      
+      mainPanel(
+        plotOutput("plot"),
+        uiOutput("animated_plot")  # Output for displaying the GIF
+      )
+    )
+  )
+  
+  #Server logic
+  server <- function(input, output, session) {
+    load("working_dataset.RData")
+    reactive_gif_data <- reactiveVal(NULL)
+
+    # Generate the filtered data based on input
+    filtered_data <- reactive({
+      req(input$goButton)
+      data <- switch(input$dataset_type,
+                     "Population" = Population,
+                     "Income" = Income)
+
+      filtered <- data %>%
+        filter(NAME %in% if (input$dataset_type == "Income") input$county_income else input$county_population,
+               year %in% seq(input$years[1], input$years[2]))
+
+      if (input$dataset_type == "Income") {
+        filtered <- filtered %>%
+          filter(Race_Income %in% input$race_income)
+      } else {
+        filtered <- filtered %>%
+          filter(Race %in% input$race_population)
+      }
+
+      return(filtered)
+    })
+
+    create_plot <- function(data) {
+      fill_line <- if (input$dataset_type == "Population") "Race" else "Race_Income"
+      county_name <- if (input$dataset_type == "Income") input$county_income else input$county_population
+
+      ggplot(data, aes_string(x = "year", y = if (input$dataset_type == "Income") "Income" else "Population", color = fill_line, group = fill_line)) +
+        geom_line() +
+        labs(title = paste(if (input$dataset_type == "Income") "Income Growth in" else "Population Growth in", county_name, "by Race"),
+             x = "Year",
+             y = "",
+             subtitle = if (input$dataset_type == "Income") "Average Income USD ($)" else "Number of People",
+             fill = if (input$dataset_type == "Income") "Income Race" else "Race") +
+        theme_bw() +
+        scale_x_continuous(breaks = seq(2013, 2022, by = 1)) +
+        theme(plot.title = element_text(face = "bold"),
+              axis.title.x = element_text(size = 9, face = "bold"),
+              axis.title.y = element_text(size = 9, face = "bold"),
+              plot.subtitle = element_text(face = "bold"),
+              axis.text.x = element_text(angle = 25))
+    }
+
+    # Observe the goButton and create a plot or GIF as requested
+    observeEvent(input$goButton, {
+      req(filtered_data())
+      showModal(modalDialog("Generating Plot, please wait...", footer = NULL))
+      output$plot <- renderPlot({
+        create_plot(filtered_data())
+      })
+      removeModal()
+
+      if (input$create_gif) {
+        showModal(modalDialog("Generating GIF, please wait...", footer = NULL))
+        isolate({
+          create_gif(filtered_data())
+          removeModal()
+        })
+      }
+    })
+
+    create_gif <- function(data) {
+      # Define fill_line based on the dataset type
+      y_column <- if (input$dataset_type == "Population") "Population" else "Income"
+      fill_line <- if (input$dataset_type == "Population") "Race" else "Race_Income"
+      county_name <- if (input$dataset_type == "Income") input$county_income else input$county_population
+
+      # Ensure year is numeric and sort the data
+      data <- data %>%
+        mutate(year = as.numeric(year),
+               across(all_of(fill_line), as.character)) %>%
+        arrange(year, !!sym(fill_line))
+
+      # Use the ggplot code with aes() for better readability
+      p <- ggplot(data, aes(x = year, y = !!sym(y_column),
+                            group = !!sym(fill_line), color = !!sym(fill_line))) +
+        geom_line() +
+        labs(title = paste(if (input$dataset_type == "Income") "Income Growth in" else "Population Growth in", county_name, "by Race"),
+             x = "Year", y = "",
+             subtitle = if (input$dataset_type == "Income") "Average Income USD ($)" else "Number of People",
+             color = fill_line) +
+        theme_bw() +
+        theme(plot.title = element_text(face = "bold"),
+              axis.title.x = element_text(size = 9, face = "bold"),
+              axis.title.y = element_text(size = 9, face = "bold"),
+              plot.subtitle = element_text(face = "bold"),
+              axis.text.x = element_text(angle = 25)) +
+        scale_x_continuous(breaks = seq(min(data$year), max(data$year), by = 1)) +
+        transition_reveal(year) +
+        ease_aes('linear')
+
+      # Render the animation and store it as base64
+      gif_data <- animate(p, nframes = length(unique(data$year)) * 10, end_pause = 10, renderer = gifski_renderer())
+      gif_base64 <- base64enc::base64encode(gif_data)
+
+      # Store the base64 encoded GIF data
+      reactive_gif_data(gif_base64)
+
+      # Display the GIF
+      output$animated_plot <- renderUI({
+        tags$img(src = paste0("data:image/gif;base64,", reactive_gif_data()))
+      })
+    }
+  }
+ 
+  
+  shinyApp(ui = ui, server = server)
+  
+  
+  
+  
+  

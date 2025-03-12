@@ -1,0 +1,245 @@
+---
+title: "Handout15Code_RMarkdown_StudentsAnswers"
+output:
+  pdf_document: default
+  html_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+# Example 1: FEV.xls                   #
+
+Import Data
+```{r}
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(readxl) 
+FEVData=read_excel("FEV.xls")
+str(FEVData)
+
+```
+
+Change categorical variables to type factor [contrast() and relevel() functions]
+```{r}
+FEVData$Gender=factor(FEVData$Gender)
+FEVData$Smoke=factor(FEVData$Smoke)
+str(FEVData)
+
+```
+
+
+#1(a)==========================
+Regress FEV on smoke(treating as quantitative)
+```{r}
+library(RColorBrewer);cols <- brewer.pal(3, "Set1")
+Smoke.coded=1*(FEVData$Smoke==1)
+
+
+mod1=lm(FEV~Smoke, data=FEVData)
+summary(mod1)
+
+#Yes people that dont smoke  have bigger lung capcity. 
+#If they smoke it increases .71072 from 2.56614 the average
+
+
+```
+
+Fitted line plot (treating smoke as quantitative)
+```{r}
+##b
+par(mfrow=c(1,1))
+plot(FEV~Smoke.coded,data=FEVData,col=cols[Smoke])
+abline(mod1,col='blue')
+legend('top',legend=c('nonsmoker','smoker'),pch=19,col=cols)
+
+#No it is increasing
+
+#Smoke1 0.367373 -0.208995 +(Age) 0.230605  = .158378+(Age) 0.230605
+
+
+# 0.367373 +0.230605 (Age) 
+
+
+```
+
+Slope of the line matches the difference in means
+```{r}
+aggregate(FEVData$FEV, list(FEVData$Smoke), FUN=mean)
+with(FEVData, mean(FEV[Smoke==1])-mean(FEV[Smoke==0]))
+
+aggregate(FEVData$FEV, list(FEVData$Smoke), FUN=mean)
+
+
+```
+
+
+#1(b-c)==========================
+Regress FEV on Smoke & Age
+```{r}
+mod2=lm(FEV~Smoke+Age, data=FEVData)
+summary(mod2)
+
+#b.a one year increase in age is associated with a mean increase of .231 liters in average fev. after adj for smoking
+
+#C1 FEV INCREASES BY AGE
+#C2 IT VARIAGES MORE
+
+```
+
+Fitted line plot by smoking status
+```{r}
+#library(RColorBrewer);cols <- brewer.pal(3, "Set1")
+plot(FEV~Age,data=FEVData,col=cols[Smoke],cex=0.8)
+legend('topleft',legend=c('nonsmoker','smoker'),col=cols,cex=0.8,pch=1)
+
+coeff=mod2$coeff
+abline(coeff[1],coeff[3],col=cols[1])
+abline(coeff[1]+coeff[2],coeff[3],col=cols[2])
+```
+
+#1(d)==========================
+Regress FEV on Smoke & Age with interaction
+```{r}
+mod3=lm(FEV~Smoke+Age+Smoke:Age, data=FEVData)
+#or mod3=lm(FEV~Smoke*Age)
+summary(mod3)
+
+# FEV = .25+1.943571(smoke) +(age)(0.242558) +smokexage(-.162703 )
+#fev = .25  + (age)0.242558
+#fev = .25 -0.162703 + (age)(0.242558 -.162703)
+
+```
+
+
+Fitted line plot by smoking status
+```{r}
+par(mfrow=c(1,1))
+plot(FEV~Age,data=FEVData,col=cols[Smoke],cex=0.8);
+legend('topleft',legend=c('nonsmoker','smoker'),pch=1,col=cols,cex=0.8)
+
+coeff=mod3$coeff
+abline(coeff[1],coeff[3],col=cols[1])
+abline(coeff[1]+coeff[2],coeff[3]+coeff[4],col=cols[2])
+
+```
+
+#1(e-f)==========================
+Partial F-test to determine if Smoke*Age sig.  
+Agrees with t-test from summary output (cannot use t-test if more than 2 categories)
+
+```{r}
+#anova(lm(  ,data=FEVData),
+#      lm(  ,data=FEVData))
+
+anova(lm(FEV~Smoke+Age,data=FEVData),
+      lm(FEV~Smoke+Age+Smoke:Age,data=FEVData))
+#e
+#pval = .645e-07 
+#Ho interact = 0
+#Ha not 0
+#Df = 60
+#we have sig evidence to say that inte interaction does not eqaul 0 the diff in slope is signfigant
+
+```
+
+#1(g)==========================
+```{r}
+confint(mod3)
+
+#we are 95% conf that the mean amount by which the fev increases for each one year increase in age is between .10 and .23 lower for smokers than non smokers
+```
+
+
+#1(h)
+```{r}
+#Smoking depends on age
+
+#h2 1.943571-.162703
+```
+
+
+#1(i)==========================
+Check VIF for evidence of multicollinearity
+```{r}
+library('car')
+vif(mod3)
+
+#yes it is about 4 so it is a moderate issue
+```
+
+Centering Age reduces the multicollinearity
+```{r}
+mod4=lm(FEV~Smoke+I(Age-mean(Age))+Smoke:I(Age-mean(Age)), data=FEVData)
+vif(mod4)
+
+```
+
+#1(j)==========================
+```{r}
+(X=model.matrix(mod3))
+#if smoke1 is 1 then the last column takes the age columns value
+```
+
+
+
+# Example 2: fruitfly.xlsx             #
+
+
+Import Data
+```{r}
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#library(readxl)  
+fruitfly=read_excel("fruitfly.xlsx")
+fruitfly$activity=factor(fruitfly$activity)  
+
+library(RColorBrewer);cols <- brewer.pal(5, "Set1")
+par(mfrow=c(1,5))
+for(i in 1:5){
+  plot(longevity ~ thorax, data=fruitfly[fruitfly$activity==levels(fruitfly$activity)[i],], 
+       col=cols[i], ylab='longevity', xlab='thorax', main=levels(activity)[i],pch=i,
+       xlim=range(fruitfly$thorax),ylim=range(fruitfly$longevity))
+}
+
+```
+
+#2(a)==========================
+```{r}
+fly.fit=lm(log(longevity) ~ thorax+activity+thorax:activity, data=fruitfly)
+summary(fly.fit)
+
+```
+
+Design matrix
+```{r}
+(X=model.matrix(fly.fit))
+```
+
+
+
+#2(b)==========================
+```{r}
+
+anova(lm(log(longevity) ~ thorax+activity, data=fruitfly),
+      lm(log(longevity) ~ thorax+activity+thorax:activity, data=fruitfly))
+
+
+# Fail to reject null cannot conclude that there is a sig difference
+```
+
+
+
+#2(d)==========================
+```{r}
+#We have to test for all the variables there are 4 levels not 2. (non binary var)
+```
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+
+
+
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Mai Website"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects.qmd
+        text: Projects
+      - href: resume.qmd
+        text: Contact
+    right:
+        
+      - href: https://github.com/JustinMai042
+        text: GitHub
+        icon: github
+      - href: https://www.linkedin.com/in/justin-mai-1b1ba8255/
+        text: LinkedIn
+        icon: linkedin
+        
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+
+editor: visual

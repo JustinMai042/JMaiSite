@@ -1,0 +1,32 @@
+---
+title: ""
+image: profimage.jpeg
+editor_options: 
+  chunk_output_type: console
+---
+
+![](profimage.jpg){fig-align="center" width=400px}
+
+Hello! My name is Justin Mai and I am currently attending California Polytechnic State University San Luis Obispo, I am majoring in statistics and want to pursue the data science track. Welcome to my website here you can find some of my projects and my contact information. 
+
+                                                       
+
+Since there is some space left. Here are a few fun facts about me:
+
+- I love snowboarding during the winter months, carving down the slopes and enjoying the fresh mountain air.
+
+- Climbing is another passion of mine. I mostly indoor boulder over the summer.
+
+- Video games are a big part of my downtime, I enjoy playing them to pass time or playing them to avoid assigments.
+
+- My first and only snowboard was bought from a man behing a walmart for 100 dollars
+
+
+
+My GitHub
+[![GitHub Logo](github-mark.png)](https://github.com/JustinMai042){fig-align="center" width=20px }
+My LinkedIn
+[![LinkedIn Logo](ln-mark.png)](https://www.linkedin.com/in/justin-mai-1b1ba8255/){ fig-align="center" width=20px }
+My Resume
+[![Pdf Logo](pdf-mark.jpeg)](resumeJM-06-02-24.pdf){ fig-align="center" width=20px }
+
