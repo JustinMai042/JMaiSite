@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - site.js
+    - .nojekyll
+    - geocam-campus-explorer.html
+
+website:
+  title: "Justin Mai"
+  favicon: favicon.svg
+  navbar:
+    pinned: true
+    collapse-below: lg
+    logo: favicon.svg
+    title: "Justin Mai"
+    left:
+      - href: index.qmd
+        text: Portfolio
+      - href: resume.qmd
+        text: Contact
+    right:
+      - icon: github
+        href: https://github.com/JustinMai042
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/justin-mai-1b1ba8255/
+        aria-label: LinkedIn
+  page-footer:
+    border: false
+    left: "© 2026 Justin Mai"
+    center: "Statistics · Data science · Visualization"
+    right:
+      - icon: github
+        href: https://github.com/JustinMai042
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/justin-mai-1b1ba8255/
+        aria-label: LinkedIn
+  back-to-top-navigation: true
+  open-graph: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    include-after-body: includes/site-scripts.html
+    grid:
+      body-width: 1180px
+      margin-width: 0px
+      gutter-width: 1.5rem
+
+editor: visual

@@ -1,0 +1,175 @@
+---
+title: ""
+pagetitle: "Justin Mai | Statistics & Data Science"
+description: "Portfolio of Justin Mai, a Cal Poly Statistics graduate working across machine learning, geospatial data, and statistical modeling."
+image: profimage.jpg
+page-layout: full
+---
+
+::::::::: {.hero-section .section-shell}
+::::: {.hero-copy .reveal}
+[ Statistics · Data Science · Visualization]{.eyebrow}
+
+# R \> Python
+
+I'm **Justin Mai**, a Cal Poly Statistics + Data Science graduate. I build reproducible data and machine-learning workflows across geospatial vision, statistical modeling, and interactive analytics.
+
+::: hero-actions
+<a class="button button-primary" href="#projects">Explore my work <i class="bi bi-arrow-down"></i></a> <a class="button button-secondary" href="Justin-Mai-Resume-2026.pdf">View resume <i class="bi bi-file-earmark-person"></i></a>
+:::
+
+::: {.hero-links aria-label="Social profiles"}
+<a href="https://github.com/JustinMai042"><i class="bi bi-github"></i> GitHub</a> <a href="https://www.linkedin.com/in/justin-mai-1b1ba8255/"><i class="bi bi-linkedin"></i> LinkedIn</a>
+:::
+:::::
+
+::::: {.hero-visual .reveal .delay-1}
+:::: {.portrait-frame .interactive-card}
+::: portrait-halo
+:::
+
+<img src="profimage.jpg" alt="Portrait of Justin Mai" class="hero-portrait"/>
+::::
+:::::
+:::::::::
+
+:::::::::::::::::::::::::::::: {#projects .home-projects .section-shell}
+:::: {.section-heading .section-heading-row .home-projects-heading .reveal}
+::: {}
+[<i class="bi bi-grid-1x2"></i> Selected work]{.eyebrow}
+
+## My Work and Projects
+
+Interactive tools, analytical storytelling, and statistical research all on one page!
+:::
+
+<a class="text-link" href="https://github.com/JustinMai042">More on GitHub <i class="bi bi-arrow-up-right"></i></a>
+::::
+
+::::::::::::::::::::::::::: projects-stack
+::::::::: {#geocam-campus-locator .project-showcase .interactive-card .reveal}
+:::::: project-summary
+::: project-kicker
+01 Geospatial machine learning
+:::
+
+## GeoCam Campus Locator
+
+A photo-based campus building identifier paired with an interactive Cal Poly explorer. The mobile app connects a React Native camera workflow to a vision pipeline built with fine-tuned OpenCLIP and SIFT-LightGlue, then returns a predicted building, confidence score, and useful campus details.
+
+::: tag-row
+PythonOpenCLIPLightGlueReact Native
+:::
+
+::: project-actions
+<a class="button button-primary" href="geocam-campus-explorer.html">Explore campus demo <i class="bi bi-arrow-up-right"></i></a> <a class="button button-secondary" href="https://github.com/JustinMai042/slocator">View source <i class="bi bi-github"></i></a>
+:::
+::::::
+
+:::: {.project-preview-shell .geocam-preview}
+::: browser-chrome
+<small>Interactive campus explorer</small> <button class="preview-expand" type="button" aria-expanded="false" aria-label="Expand GeoCam campus explorer"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+:::
+
+<iframe src="geocam-campus-explorer.html" title="GeoCam Cal Poly Campus Explorer" loading="lazy">
+
+</iframe>
+::::
+:::::::::
+
+::::::::: {#census-data-explorer .project-showcase .interactive-card .reveal}
+:::::: project-summary
+::: project-kicker
+02 Interactive application
+:::
+
+## Census Data Explorer
+
+An interactive Shiny application for exploring census income data and building animated visualizations. Choose inputs, compare patterns, and generate a GIF directly in the app.
+
+::: tag-row
+RShinyCensus dataAnimation
+:::
+
+::: project-actions
+<a class="button button-primary" href="https://justinmai042.shinyapps.io/census_gif_final/">Open live app <i class="bi bi-arrow-up-right"></i></a>
+:::
+::::::
+
+:::: {.project-preview-shell .app-preview}
+::: browser-chrome
+<small>Interactive preview</small> <button class="preview-expand" type="button" aria-expanded="false" aria-label="Expand Census Data Explorer"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+:::
+
+<iframe src="https://justinmai042.shinyapps.io/census_gif_final/" title="Census Data Explorer Shiny application" loading="lazy">
+
+</iframe>
+::::
+:::::::::
+
+:::::::::::: {.project-showcase .interactive-card .reveal}
+:::::: project-summary
+::: project-kicker
+03 Statistical research
+:::
+
+## Investigating Butterfly Habitats
+
+This study uses multilevel regression to examine how temperature, humidity, seasonal variation, and other environmental conditions affect the likelihood of butterflies being present in an area.
+
+::: tag-row
+Multilevel modelsEcologyResearch
+:::
+
+::: project-actions
+<a class="button button-primary" href="final_report.pdf">Read full report <i class="bi bi-arrow-up-right"></i></a> <button class="button button-secondary preview-toggle" type="button" aria-expanded="false" data-preview="butterfly-preview">Preview here <i class="bi bi-chevron-down"></i></button>
+:::
+::::::
+
+:::::: {.project-art .art-butterfly aria-hidden="true"}
+::: {.wing .wing-left}
+:::
+
+::: {.wing .wing-right}
+:::
+
+::: butterfly-body
+:::
+
+[MODEL / ECOLOGY]{.art-label}
+::::::
+
+::: {#butterfly-preview .inline-preview hidden="hidden"}
+<iframe src="final_report.pdf" title="Butterfly habitats research report" loading="lazy">
+
+</iframe>
+:::
+::::::::::::
+:::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::
+
+::::: {.off-clock .section-shell .reveal}
+::: {}
+[Away from the data]{.eyebrow}
+
+## Snow, walls, and games.
+:::
+
+<p>When I'm off the clock, you'll usually find me snowboarding, indoor bouldering, or unwinding with a game.</p>
+
+::: {.off-clock-icons aria-hidden="true"}
+<i class="bi bi-snow2"></i><i class="bi bi-triangle"></i><i class="bi bi-controller"></i>
+:::
+:::::
+
+:::: {.cta-section .section-shell .reveal}
+::: {}
+[Let's connect]{.eyebrow .eyebrow-light}
+
+## Have a question or an interesting dataset?
+
+I'm always happy to talk about statistics, data visualization, or a project worth exploring.
+:::
+
+<a class="button button-light" href="resume.html">Get in touch <i class="bi bi-arrow-right"></i></a>
+::::

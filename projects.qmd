@@ -1,0 +1,21 @@
+---
+title: ""
+pagetitle: "Projects | Justin Mai"
+description: "Justin Mai's projects are now featured on the homepage."
+page-layout: full
+search: false
+---
+
+<script>
+window.location.replace("index.html#projects");
+</script>
+
+::: {.redirect-page .section-shell}
+
+# Projects have moved.
+
+My projects now live alongside my introduction on the homepage.
+
+<a class="button button-primary" href="index.html#projects">View projects <i class="bi bi-arrow-right"></i></a>
+
+:::

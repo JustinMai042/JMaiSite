@@ -1,23 +1,58 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Mai Website",
-    "section": "",
-    "text": "Hello! My name is Justin Mai and I am currently attending California Polytechnic State University San Luis Obispo, I am majoring in statistics and want to pursue the data science track. Welcome to my website here you can find some of my projects and my contact information.\nSince there is some space left. Here are a few fun facts about me:\n\nI love snowboarding during the winter months, carving down the slopes and enjoying the fresh mountain air.\nClimbing is another passion of mine. I mostly indoor boulder over the summer.\nVideo games are a big part of my downtime, I enjoy playing them to pass time or playing them to avoid assigments.\nMy first and only snowboard was bought from a man behing a walmart for 100 dollars\n\nMy GitHub  My LinkedIn  My Resume"
-  },
-  {
     "objectID": "resume.html",
     "href": "resume.html",
-    "title": "Contact",
+    "title": "Let’s start a conversation.",
     "section": "",
-    "text": "If you have any questions, feel free to Email me or Call me."
+    "text": "Get in touch\n\nLet’s start a conversation.\nHave a question, an opportunity, or an interesting dataset? Send me a message. I’m always glad to connect and hear what you’re working on.\n\nEmail me  Download résumé \n\n\n\n\n\n\n\n\n\n\n\nJM\n\n\n\n\n\n\n Email\n\nSay hello directly\njustinmai042@gmail.com\n\n Copy address\n\n\n\n\n Phone\n\nPrefer a quick call?\n+1 (626) 271-7071\nTap the number to call\n\n\n\n GitHub\n\nSee what I’m building\n@JustinMai042\nProjects, experiments, and code\n\n\n\n LinkedIn\n\nConnect professionally\nJustin Mai\nLet’s grow our networks\n\n\n\n\n\n\nThanks for stopping by. I read every message and will get back to you as soon as I can.\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R > Python",
     "section": "",
-    "text": "Here are some of my projects that have been done within the last year! Additional projects such as ones done in Python and SAS can be found on my gitHub repository.\nCensus Data Shiny App:\n\n\n(To create a GIF just check the box and click Generate Visualization again)\nDatafest Presentation:"
+    "text": "Statistics · Data Science · Visualization\n\n\nI’m Justin Mai, a Cal Poly Statistics + Data Science graduate. I build reproducible data and machine-learning workflows across geospatial vision, statistical modeling, and interactive analytics.\n\nExplore my work  View resume \n\n\n GitHub  LinkedIn"
+  },
+  {
+    "objectID": "index.html#my-work-and-projects",
+    "href": "index.html#my-work-and-projects",
+    "title": "R > Python",
+    "section": "My Work and Projects",
+    "text": "My Work and Projects\nInteractive tools, analytical storytelling, and statistical research all on one page!"
+  },
+  {
+    "objectID": "index.html#geocam-campus-locator",
+    "href": "index.html#geocam-campus-locator",
+    "title": "R > Python",
+    "section": "GeoCam Campus Locator",
+    "text": "GeoCam Campus Locator\nA photo-based campus building identifier paired with an interactive Cal Poly explorer. The mobile app connects a React Native camera workflow to a vision pipeline built with fine-tuned OpenCLIP and SIFT-LightGlue, then returns a predicted building, confidence score, and useful campus details.\n\nPythonOpenCLIPLightGlueReact Native\n\n\nExplore campus demo  View source"
+  },
+  {
+    "objectID": "index.html#census-data-explorer",
+    "href": "index.html#census-data-explorer",
+    "title": "R > Python",
+    "section": "Census Data Explorer",
+    "text": "Census Data Explorer\nAn interactive Shiny application for exploring census income data and building animated visualizations. Choose inputs, compare patterns, and generate a GIF directly in the app.\n\nRShinyCensus dataAnimation\n\n\nOpen live app"
+  },
+  {
+    "objectID": "index.html#investigating-butterfly-habitats",
+    "href": "index.html#investigating-butterfly-habitats",
+    "title": "R > Python",
+    "section": "Investigating Butterfly Habitats",
+    "text": "Investigating Butterfly Habitats\nThis study uses multilevel regression to examine how temperature, humidity, seasonal variation, and other environmental conditions affect the likelihood of butterflies being present in an area.\n\nMultilevel modelsEcologyResearch\n\n\nRead full report  Preview here"
+  },
+  {
+    "objectID": "index.html#snow-walls-and-games.",
+    "href": "index.html#snow-walls-and-games.",
+    "title": "R > Python",
+    "section": "Snow, walls, and games.",
+    "text": "Snow, walls, and games."
+  },
+  {
+    "objectID": "index.html#have-a-question-or-an-interesting-dataset",
+    "href": "index.html#have-a-question-or-an-interesting-dataset",
+    "title": "R > Python",
+    "section": "Have a question or an interesting dataset?",
+    "text": "Have a question or an interesting dataset?\nI’m always happy to talk about statistics, data visualization, or a project worth exploring."
   }
 ]

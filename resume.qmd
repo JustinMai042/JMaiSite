@@ -1,0 +1,86 @@
+---
+title: ""
+pagetitle: "Contact | Justin Mai"
+description: "Contact Justin Mai about statistics, data science, visualization, and project opportunities."
+page-layout: full
+---
+
+:::: {.contact-hero .section-shell}
+
+::: {.contact-intro .reveal}
+<span class="eyebrow"><i class="bi bi-chat-dots"></i> Get in touch</span>
+
+# Let's start a conversation.
+
+Have a question, an opportunity, or an interesting dataset? Send me a message. I'm always glad to connect and hear what you're working on.
+
+<div class="contact-actions">
+  <a class="button button-primary" href="mailto:justinmai042@gmail.com">Email me <i class="bi bi-send"></i></a>
+  <a class="button button-secondary" href="Justin-Mai-Resume-2026.pdf">Download résumé <i class="bi bi-download"></i></a>
+</div>
+:::
+
+::: {.contact-orbit .reveal .delay-1 aria-hidden="true"}
+<div class="orbit-ring ring-one"></div>
+<div class="orbit-ring ring-two"></div>
+<div class="orbit-center"><span>JM</span></div>
+<i class="orbit-dot dot-one"></i><i class="orbit-dot dot-two"></i><i class="orbit-dot dot-three"></i>
+:::
+
+::::
+
+:::: {.contact-grid .section-shell}
+
+::: {.contact-card .interactive-card .reveal}
+<span class="card-icon"><i class="bi bi-envelope"></i></span>
+<span class="contact-label">Email</span>
+
+### Say hello directly
+
+<a class="contact-value" href="mailto:justinmai042@gmail.com">justinmai042@gmail.com</a>
+
+<button class="copy-button" type="button" data-copy="justinmai042@gmail.com"><i class="bi bi-copy"></i> Copy address</button>
+:::
+
+::: {.contact-card .interactive-card .reveal .delay-1}
+<span class="card-icon"><i class="bi bi-telephone"></i></span>
+<span class="contact-label">Phone</span>
+
+### Prefer a quick call?
+
+<a class="contact-value" href="tel:+16262717071">+1 (626) 271-7071</a>
+
+<span class="contact-caption">Tap the number to call</span>
+:::
+
+::: {.contact-card .interactive-card .reveal .delay-2}
+<span class="card-icon"><i class="bi bi-github"></i></span>
+<span class="contact-label">GitHub</span>
+
+### See what I'm building
+
+<a class="contact-value" href="https://github.com/JustinMai042">@JustinMai042</a>
+
+<span class="contact-caption">Projects, experiments, and code</span>
+:::
+
+::: {.contact-card .interactive-card .reveal .delay-3}
+<span class="card-icon"><i class="bi bi-linkedin"></i></span>
+<span class="contact-label">LinkedIn</span>
+
+### Connect professionally
+
+<a class="contact-value" href="https://www.linkedin.com/in/justin-mai-1b1ba8255/">Justin Mai</a>
+
+<span class="contact-caption">Let's grow our networks</span>
+:::
+
+::::
+
+::: {.availability-note .section-shell .reveal}
+<span class="availability-dot"></span>
+<div>
+<strong>Thanks for stopping by.</strong>
+<span>I read every message and will get back to you as soon as I can.</span>
+</div>
+:::
