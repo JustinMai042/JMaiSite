@@ -19,3 +19,11 @@ quarto render
 ```
 
 The rendered website is written to `docs/`, which is the folder configured for GitHub Pages.
+
+## Project structure
+
+- `assets/images/` contains portraits, branding, and image assets.
+- `assets/documents/` contains résumés, reports, and presentation files.
+- `assets/demos/` contains standalone interactive demos.
+- `includes/` contains shared Quarto HTML includes.
+- `docs/` is generated output; edit the source files instead.

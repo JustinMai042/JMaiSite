@@ -16,7 +16,7 @@ Have a question, an opportunity, or an interesting dataset? Send me a message. I
 
 <div class="contact-actions">
   <a class="button button-primary" href="mailto:justinmai042@gmail.com">Email me <i class="bi bi-send"></i></a>
-  <a class="button button-secondary" href="Justin-Mai-Resume-2026.pdf">Download résumé <i class="bi bi-download"></i></a>
+  <a class="button button-secondary" href="assets/documents/Justin-Mai-Resume-2026.pdf">Download résumé <i class="bi bi-download"></i></a>
 </div>
 :::
 

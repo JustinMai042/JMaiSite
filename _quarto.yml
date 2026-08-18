@@ -4,15 +4,15 @@ project:
   resources:
     - site.js
     - .nojekyll
-    - geocam-campus-explorer.html
+    - assets/demos/geocam-campus-explorer.html
 
 website:
   title: "Justin Mai"
-  favicon: favicon.svg
+  favicon: assets/images/favicon.svg
   navbar:
     pinned: true
     collapse-below: lg
-    logo: favicon.svg
+    logo: assets/images/favicon.svg
     title: "Justin Mai"
     left:
       - href: index.qmd

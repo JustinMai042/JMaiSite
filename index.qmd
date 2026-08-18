@@ -2,7 +2,7 @@
 title: ""
 pagetitle: "Justin Mai | Statistics & Data Science"
 description: "Portfolio of Justin Mai, a Cal Poly Statistics graduate working across machine learning, geospatial data, and statistical modeling."
-image: profimage.jpg
+image: assets/images/profimage.jpg
 page-layout: full
 ---
 
@@ -15,7 +15,7 @@ page-layout: full
 I'm **Justin Mai**, a Cal Poly Statistics + Data Science graduate. I build reproducible data and machine-learning workflows across geospatial vision, statistical modeling, and interactive analytics.
 
 ::: hero-actions
-<a class="button button-primary" href="#projects">Explore my work <i class="bi bi-arrow-down"></i></a> <a class="button button-secondary" href="Justin-Mai-Resume-2026.pdf">View resume <i class="bi bi-file-earmark-person"></i></a>
+<a class="button button-primary" href="#projects">Explore my work <i class="bi bi-arrow-down"></i></a> <a class="button button-secondary" href="assets/documents/Justin-Mai-Resume-2026.pdf">View resume <i class="bi bi-file-earmark-person"></i></a>
 :::
 
 ::: {.hero-links aria-label="Social profiles"}
@@ -28,7 +28,7 @@ I'm **Justin Mai**, a Cal Poly Statistics + Data Science graduate. I build repro
 ::: portrait-halo
 :::
 
-<img src="profimage.jpg" alt="Portrait of Justin Mai" class="hero-portrait"/>
+<img src="assets/images/profimage.jpg" alt="Portrait of Justin Mai" class="hero-portrait"/>
 ::::
 :::::
 :::::::::
@@ -62,7 +62,7 @@ PythonOpenCLIPLightGlueReact Native
 :::
 
 ::: project-actions
-<a class="button button-primary" href="geocam-campus-explorer.html">Explore campus demo <i class="bi bi-arrow-up-right"></i></a> <a class="button button-secondary" href="https://github.com/JustinMai042/slocator">View source <i class="bi bi-github"></i></a>
+<a class="button button-primary" href="assets/demos/geocam-campus-explorer.html">Explore campus demo <i class="bi bi-arrow-up-right"></i></a> <a class="button button-secondary" href="https://github.com/JustinMai042/slocator">View source <i class="bi bi-github"></i></a>
 :::
 ::::::
 
@@ -71,7 +71,7 @@ PythonOpenCLIPLightGlueReact Native
 <small>Interactive campus explorer</small> <button class="preview-expand" type="button" aria-expanded="false" aria-label="Expand GeoCam campus explorer"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
 :::
 
-<iframe src="geocam-campus-explorer.html" title="GeoCam Cal Poly Campus Explorer" loading="lazy">
+<iframe src="assets/demos/geocam-campus-explorer.html" title="GeoCam Cal Poly Campus Explorer" loading="lazy">
 
 </iframe>
 ::::
@@ -122,7 +122,7 @@ Multilevel modelsEcologyResearch
 :::
 
 ::: project-actions
-<a class="button button-primary" href="final_report.pdf">Read full report <i class="bi bi-arrow-up-right"></i></a> <button class="button button-secondary preview-toggle" type="button" aria-expanded="false" data-preview="butterfly-preview">Preview here <i class="bi bi-chevron-down"></i></button>
+<a class="button button-primary" href="assets/documents/final_report.pdf">Read full report <i class="bi bi-arrow-up-right"></i></a> <button class="button button-secondary preview-toggle" type="button" aria-expanded="false" data-preview="butterfly-preview">Preview here <i class="bi bi-chevron-down"></i></button>
 :::
 ::::::
 
@@ -140,7 +140,7 @@ Multilevel modelsEcologyResearch
 ::::::
 
 ::: {#butterfly-preview .inline-preview hidden="hidden"}
-<iframe src="final_report.pdf" title="Butterfly habitats research report" loading="lazy">
+<iframe src="assets/documents/final_report.pdf" title="Butterfly habitats research report" loading="lazy">
 
 </iframe>
 :::
